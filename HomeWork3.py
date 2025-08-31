@@ -4,4 +4,6 @@ d2, mod2 = divmod(mod1, 1000)
 d3, mod3 = divmod(mod2, 100)
 d4, mod4 = divmod(mod3, 10)
 d5, mod5 = divmod(mod4, 1)
-print(d5,d4,d3,d2,d1)
+
+revers_number = d5 * 10000 + d4 * 1000 + d3 * 100 + d2 * 10 + d1
+print(revers_number)
