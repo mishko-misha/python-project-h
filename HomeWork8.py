@@ -1,4 +1,4 @@
-numbers = []
+numbers = [6]
 result = 0
 
 if not numbers:
