@@ -50,5 +50,6 @@ for char in string_punctuation:
 
 if name in keyword_kwlist:
     print(False)  # assert => False
+#else doesn't work
 else:
     print(True)  # assert_exception => True
