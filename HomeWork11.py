@@ -18,6 +18,6 @@ while True:
         print("Calculator doesn't work with another operations")
 
     question = input("Do you want to continue? (y/n): ").lower()
-    if question != "y":
+    if question not in ("y", "yes"):
         print("Calculator stopped!")
         break
