@@ -35,7 +35,7 @@ elif name.isalpha():
             print(False)  # getValue => False
 elif any(char in name for char in string_punctuation):
     print(False)  # get!value => False
-elif name in keyword_kwlist:
+if name in keyword_kwlist:
     print(False)  # assert => False
 else:
     print(True)  # assert_exception => True
