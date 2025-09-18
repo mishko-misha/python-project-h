@@ -4,6 +4,8 @@ def second_index(text, some_str):
     if second_symbol == -1:
         return None
     return second_symbol
+
+
 print('ОК')
 
 # assert second_index("sims", "s") == 3, 'Test1'
