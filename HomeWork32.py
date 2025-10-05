@@ -31,7 +31,7 @@ class Purchase:
         self.products[item] = cnt
 
     def __str__(self):
-        result = f"User:{self.user.name} {self.user.surname}\nItem:\n"
+        result = f"User:{self.user.name} {self.user.surname}\nItems:\n"
         for item, count in self.products.items():  # items -> dict as key:value
             result += f"{item.name}: {count} pcs.\n"
         return result
@@ -68,7 +68,7 @@ assert isinstance(cart.user, User) is True, 'Екземпляр класу User'
 assert cart.get_total() == 60, "Всього 60"
 assert cart.get_total() == 60, 'Повинно залишатися 60!'
 print(cart.total)
-print('-'*50) #check total == 60
+print('-' * 50)  # check total == 60
 cart.add_item(apple, 10)
 print(cart)
 """
