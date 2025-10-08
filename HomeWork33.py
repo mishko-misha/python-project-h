@@ -7,7 +7,7 @@ class Human:
         self.last_name = last_name
 
     def __str__(self):
-        return f'First Name: {self.first_name}, Last Name:{self.last_name}, Age:{self.age} years old, Gender: {self.gender}'
+        return f'name: {self.first_name} {self.last_name}, age:{self.age} years old, gender: {self.gender}'
 
 
 class Student(Human):
@@ -17,7 +17,7 @@ class Student(Human):
         self.record_book = record_book
 
     def __str__(self):
-        return f'First Name: {self.first_name}, Last Name: {self.last_name}, Age: {self.age} years old, Gender: {self.gender},  Record book: {self.record_book}'
+        return f'name: {self.first_name} {self.last_name}, age: {self.age} years old, gender: {self.gender},  record book: {self.record_book}'
 
 
 class Group:
