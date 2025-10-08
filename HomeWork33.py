@@ -46,7 +46,7 @@ class Group:
         all_students = ''
         for student in self.group:
             all_students += str(student) + '\n'
-        return f'Number:{self.number} \n{all_students}'
+        return f'Number: {self.number} \n{all_students}'
 
 
 st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
