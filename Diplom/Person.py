@@ -10,7 +10,7 @@ class Person:
 
     @staticmethod
     def _get_date(text):
-        for char in [' ', '.', '/','-']:
+        for char in [' ', '/','-']:
             text = text.replace(char, ' ')
         parts = text.split()
 
