@@ -4,8 +4,8 @@ class Person:
         self.first_name = first_name.capitalize()
         self.middle_name = middle_name.capitalize()
         self.last_name = last_name.capitalize()
-        self.birth_date = self._get_date(birth_date)
-        self.death_date = self._get_date(death_date)
+        self.birth_date = birth_date
+        self.death_date = death_date
         self.gender = gender.lower() if gender in ('м', 'ж') else 'невідомо'
 
     @staticmethod
