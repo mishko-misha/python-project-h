@@ -55,4 +55,4 @@ class Person:
             info.append(f' {gender_check}: {death}')
         if self.gender in ('ч', 'м', 'ж'):
             info.append(f' Стать:{self.get_gender()}')
-        return ' '.join(info)
+        return ' '.join(filter(None, info))
