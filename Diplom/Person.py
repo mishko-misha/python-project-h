@@ -13,12 +13,14 @@ class Person:
 
     @staticmethod
     def _get_date(text):
+        if not text:
+            return None
         for format_date in ('%d.%m.%Y', '%d %m %Y', '%d/%m/%Y', '%d-%m-%Y'):
             try:
                 return datetime.strptime(text.strip(), format_date).date()
             except ValueError:
                 continue
-        raise ValueError('f"Неправильний формат дати: {date_str}"')
+        raise ValueError(f"Неправильний формат дати: {text}")
 
     def get_age(self):
         birth = self._get_date(self.birth_date)
@@ -43,16 +45,16 @@ class Person:
         if self.get_age():
             info.append(f'Вік: {self.get_age()}')
 
+        if self.gender in ('ч', 'м', 'ж'):
+            info.append(f' Стать:{self.get_gender()}')
+
         birth = self._get_date(self.birth_date)
         death = self._get_date(self.death_date)
 
         if birth:
-            gender_check = 'Народився:' if self.gender in ('ч',
-                                                           'м') else 'Народилася:' if self.gender == 'ж' else 'Народився/лася: '
-            info.append(f'{gender_check}{birth}')
+            gender_check = 'Народився:' if self.gender in ('ч','м') else 'Народилася:' if self.gender == 'ж' else 'Народився/лася: '
+            info.append(f'{gender_check}{birth.strftime("%d.%m.%Y")}')
         if death:
             gender_check = 'Помер' if self.gender in ('ч', 'м') else 'Померла' if self.gender == 'ж' else 'Помер/ла: '
-            info.append(f' {gender_check}: {death}')
-        if self.gender in ('ч', 'м', 'ж'):
-            info.append(f' Стать:{self.get_gender()}')
+            info.append(f' {gender_check} {death.strftime("%d.%m.%Y")}')
         return ' '.join(filter(None, info))
