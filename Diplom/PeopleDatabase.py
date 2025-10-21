@@ -11,7 +11,6 @@ class People:
         self.people.append(person)
 
     # list comprehension [expression for item in iterable if condition]
-    # person before FOR. It  will have result in finally
     def find_person(self, request):
         request = request.lower()
         return [
@@ -25,14 +24,19 @@ class People:
         data = []
 
         for person in self.people:
+            birth_date = Person.get_date(person.birth_date)
+            death_date = Person.get_date(person.death_date)
+
+            birth = birth_date.strftime('%d.%m.%Y') if birth_date else None
+            death = death_date.strftime('%d.%m.%Y') if death_date else None
+
             data.append({
                 'first_name': person.first_name,
                 'middle_name': person.middle_name,
                 'last_name': person.last_name,
-                'age': person.get_age(),
                 'gender': person.get_gender(),
-                'birth_date': person.birth_date,
-                'death_date': person.death_date,
+                'birth_date': birth,
+                'death_date': death,
             })
 
         os.makedirs('data', exist_ok=True)
@@ -51,6 +55,6 @@ class People:
 
             self.save_person(filename)
 
-            print(f'Дані завантажено з файлу {filename}')
+            print(f'Дані завантажено у папку data файл на ім\'я {filename}')
         except FileNotFoundError:
             print('Файл не знайдено.')

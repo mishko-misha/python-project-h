@@ -33,9 +33,9 @@ def main():
 
         elif choice == "2":
             request = input("Введіть текст для пошуку: ")
-            results = db.find_person(request)
-            if results:
-                for person in results:
+            result = db.find_person(request)
+            if result:
+                for person in result:
                     print(person)
             else:
                 print("Нічого не знайдено.")
